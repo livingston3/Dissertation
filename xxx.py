@@ -290,7 +290,11 @@ class Application(QApplication):
         self._pacer = Pacer(self._model)
         self._view = View(self._model)
 
-app = QApplication(sys.argv)
-app._pacer.start()
-app._view.show()
-sys.exit(app.exec())
+def main():
+    app = Application(sys.argv)
+    app._pacer.start()
+    app._view.show()
+    sys.exit(app.exec())
+
+if __name__ == '__main__':
+    main()
